@@ -1,29 +1,22 @@
-import React from "react";
-import { FontSize, FontFamily } from "../../styles/Font";
-import styled from "styled-components";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import Button from "../Atoms/Button";
+import { addTask } from "../../actions/Tasks/ActionCreator";
 
-type Props = {
-  fontSize?: FontSize;
+const DeleteTask: React.FC = () => {
+  const dispatch = useDispatch();
+  const [index, setIndex] = useState("");
+
+  const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    if (index === "") {
+      return;
+    }
+    dispatch(addTask(index));
+    setIndex("");
+  };
+
+  return <Button label="delete" onClick={onClick} />;
 };
 
-const ListButton: React.FC<Props> = (props) => {
-  const { fontSize = FontSize.Medium } = props;
-  return <StyledButton fontSize={fontSize}>削除</StyledButton>;
-};
-
-export default ListButton;
-
-type StyledListButtonProps = {
-  fontSize: FontSize;
-};
-
-const StyledButton = styled.button<StyledListButtonProps>(
-  (props) => `
-  font-size: ${props.fontSize}px;
-  font-family: ${FontFamily.Roboto};
-  margin-left: 16px;
-  background-color: red;
-  color: white;
-  border-color: white;
-`
-);
+export default DeleteTask;
