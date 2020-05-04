@@ -1,5 +1,5 @@
-import * as ActionCreators from './ActionCreator';
-import { ActionType } from 'typesafe-actions';
+import * as ActionCreators from "./ActionCreator";
+import { ActionType } from "typesafe-actions";
 
 type TasksAction = ActionType<typeof ActionCreators>;
 

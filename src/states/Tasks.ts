@@ -1,3 +1,3 @@
-type TasksState = string[]
+type TasksState = string[];
 
-export default TasksState
+export default TasksState;
