@@ -1,6 +1,3 @@
 export enum Margin {
-  Eight = "8",
-  Zero = "0",
+  Eight = 8
 }
-
-export default Margin;

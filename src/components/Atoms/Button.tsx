@@ -5,6 +5,7 @@ import { Margin } from "../../styles/Layout";
 
 type Props = {
   label: string;
+
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
@@ -22,5 +23,7 @@ type StyledButtonProps = {
 const StyledButton = styled.button`
   font-size: ${FontSize.Medium}px;
   font-family: ${FontFamily.Roboto};
+  background-color: red;
+  color: white;
   margin: 8px;
-`;
+`

@@ -11,6 +11,8 @@ export default (state: TasksState = initialState, action: TasksAction): TasksSta
         ...state,
         action.payload
       ]
+    case TasksActionType.DELETE_TASK:
+      return state.filter(todo => todo !== action.type)
     default:
       return state
   }
