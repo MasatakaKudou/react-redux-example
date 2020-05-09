@@ -24,7 +24,7 @@ const AddTask: React.FC = () => {
   return (
     <div>
       <Form value={inputTask} onChange={onChange} />
-      <Button label='add' onClick={onClick}/>
+      <Button label='add' onClick={onClick} color="black" background="white"/>
     </div>
   )
 }

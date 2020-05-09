@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import Button from "../Atoms/Button";
+import Button from "./Button";
 import { deleteTask } from "../../actions/Tasks/ActionCreator";
 
 const DeleteTask: React.FC = () => {
@@ -10,7 +10,8 @@ const DeleteTask: React.FC = () => {
     e.preventDefault();
   };
 
-  return <Button label="delete" onClick={onClick} />;
+  return <Button label="delete" onClick={onClick} color="white" background="red"/>;
 };
 
 export default DeleteTask;
+
