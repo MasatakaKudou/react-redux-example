@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import Button from '../Atoms/Button';
 import Form from '../Atoms/Form';
 import { addTask } from '../../actions/Tasks/ActionCreator';
+import Color from '../../styles/Color';
 
 const AddTask: React.FC = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const AddTask: React.FC = () => {
   return (
     <div>
       <Form value={inputTask} onChange={onChange} />
-      <Button label='add' onClick={onClick} color="black" background="white"/>
+      <Button label='add' onClick={onClick} color="black" background={Color.White}/>
     </div>
   )
 }

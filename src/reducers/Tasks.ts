@@ -12,7 +12,10 @@ export default (state: TasksState = initialState, action: TasksAction): TasksSta
         action.payload
       ]
     case TasksActionType.DELETE_TASK:
-      return state.filter(todo => todo !== action.type)
+      return [
+        ...state.slice(0,action.payload.index),
+        ...state.slice(action.payload.index + 1)
+      ]
     default:
       return state
   }

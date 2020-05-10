@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { FontSize, FontFamily } from "../../styles/Font";
+import Color from "../../styles/Color";
 
 type Props = {
   label: string;
   color: "white" | "black";
-  background: "red" | "white";
+  background: Color;
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 

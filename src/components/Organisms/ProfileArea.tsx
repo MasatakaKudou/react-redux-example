@@ -3,9 +3,10 @@ import { useSelector } from "react-redux";
 import RootState from "../../states";
 import Label from "../Atoms/Label";
 import ListLabel from "../Atoms/ListLabel";
-import ListButton from "../Atoms/ListButton";
+import ListButton from "../Molecules/ViewAndDeleteTask";
 import GridArea from "../../styles/GridArea";
 import { HomeGridArea } from "../Pages/TaskPage";
+import ViewAndDeleteTask from "../Molecules/ViewAndDeleteTask";
 
 const ProfileArea: React.FC = () => {
   const user = useSelector<RootState, RootState["user"]>((state) => state.user);
@@ -20,10 +21,7 @@ const ProfileArea: React.FC = () => {
         <Label text="Tasks:" />
         {tasks.map((task, index) => {
           return (
-            <div className="siimple--display-flex">
-              <ListLabel key={task + index} text={task} />
-              <ListButton />
-            </div>
+            <ViewAndDeleteTask key={task+index} task={task} index={index} />
           );
         })}
       </GridArea>
